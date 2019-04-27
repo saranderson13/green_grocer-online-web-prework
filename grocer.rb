@@ -4,7 +4,7 @@ def consolidate_cart(cart)
   # Add a "count" key to indicate the quantity of each item.
   # If there are multiple of any item, keep only one entry for it.
   
-  binding.pry
+
   consolidated = {}
   check_count = []
   
@@ -35,6 +35,7 @@ def apply_coupons(cart, coupons)
   carryover_info = {}
   cart.each do |item, item_info|
     coupons.each do |coupon_hash|
+      binding.pry
       if item == coupon_hash[:item]
         if carryover_info[item] == nil
           carryover_info[item] = {} 
