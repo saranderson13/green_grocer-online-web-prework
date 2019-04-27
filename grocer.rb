@@ -35,7 +35,7 @@ def apply_coupons(cart, coupons)
   carryover_info = {}
   cart.each do |item, item_info|
     coupons.each do |coupon_hash|
-      binding.pry
+      # binding.pry
       if item == coupon_hash[:item]
         if carryover_info[item] == nil
           carryover_info[item] = {} 
@@ -62,7 +62,7 @@ def apply_coupons(cart, coupons)
     # item:count = remainder of items that were not included in a coupon
     cart[item][:count] = cart[item][:count] % carryover_info[item][:coupon_num_items]
     
-    # binding.pry
+    binding.pry
   end
   
   # binding.pry
