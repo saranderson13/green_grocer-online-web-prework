@@ -4,6 +4,7 @@ def consolidate_cart(cart)
   # Add a "count" key to indicate the quantity of each item.
   # If there are multiple of any item, keep only one entry for it.
   
+  binding.pry
   consolidated = {}
   check_count = []
   
