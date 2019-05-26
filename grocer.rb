@@ -12,18 +12,13 @@ def consolidate_cart(cart)
       end
     end
   end
-  # binding.pry
   consolidated
 end
 
 def apply_coupons(cart, coupons)
   to_add = []
-  cart.each do |item, attributes|
-    coupons.each do |coupon|
-      to_add << coupon if coupon[:item] == item
-    end
-  end
-  
+  cart.each { |item, attributes| coupons.each { |coupon| to_add << coupon if coupon[:item] == item } }
+
   to_add.each do |coupon_info|
     if cart[coupon_info[:item]][:count] >= coupon_info[:num]
       if cart["#{coupon_info[:item]} W/COUPON"]
